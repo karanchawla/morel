@@ -1,0 +1,12 @@
+/target
+.DS_Store
+/morel-python/target
+/morel-python/.pytest_cache
+/morel-python/.mypy_cache
+/morel-python/**/__pycache__/
+/morel-python/**/*.py[cod]
+/morel-python/python/morel/*.so
+/morel-python/python/morel/*.pyd
+/morel-python/*.egg-info
+/morel-python/dist
+/morel-python/build

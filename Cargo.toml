@@ -1,0 +1,11 @@
+[workspace]
+members = ["morel", "morel-python"]
+resolver = "2"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+overflow-checks = false

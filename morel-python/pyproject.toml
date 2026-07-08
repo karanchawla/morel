@@ -1,0 +1,49 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "morelpy"
+dynamic = ["version"]
+description = "Python bindings for the Morel stream processor"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT OR Apache-2.0"
+license-files = ["LICENSE-MIT", "LICENSE-APACHE"]
+authors = [{ name = "Karan Chawla" }]
+keywords = ["stream-processing", "dataflow", "replay", "low-latency"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Distributed Computing",
+]
+
+[project.urls]
+Homepage = "https://github.com/karanchawla/morel"
+Repository = "https://github.com/karanchawla/morel"
+
+[project.optional-dependencies]
+dev = ["maturin>=1.4,<2.0", "pytest>=8", "twine>=6"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "morel._morel"
+features = ["pyo3/extension-module"]
+exclude = ["python/**/__pycache__/*", "python/**/*.py[cod]"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
