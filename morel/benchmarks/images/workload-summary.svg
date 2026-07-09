@@ -1,42 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" role="img" aria-labelledby="title desc">
   <title id="title">Morel workload benchmark summary</title>
-  <desc id="desc">Criterion workload throughput with 20000 events per run: map filter scan 22.606 million elements per second, word count 1.912, windowed count 13.454, latest join 20.971, fanout gather 11.284.</desc>
+  <desc id="desc">Criterion workload throughput with 20000 events per run, sorted by throughput: map filter scan 22.606 million elements per second, latest join 20.971, windowed count 13.454, fanout gather 11.284, word count 1.912.</desc>
   <rect width="880" height="360" fill="#fbfbf8"/>
-  <text x="40" y="48" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#202124">Generic workload throughput</text>
-  <text x="40" y="76" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" fill="#5f6368">Criterion estimates, 20,000 input events per run</text>
-  <line x1="230" y1="304" x2="820" y2="304" stroke="#d0d5dd" stroke-width="1"/>
-  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
-    <text x="230" y="329" font-size="12" fill="#6b7280">0</text>
-    <text x="377" y="329" font-size="12" fill="#6b7280">6</text>
-    <text x="525" y="329" font-size="12" fill="#6b7280">12</text>
-    <text x="672" y="329" font-size="12" fill="#6b7280">18</text>
-    <text x="790" y="329" font-size="12" fill="#6b7280">24 Melem/s</text>
+  <text x="40" y="46" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="23" fill="#202124">Generic workload throughput</text>
+  <text x="40" y="72" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="13" fill="#5f6368">Criterion estimates, 20,000 input events per run</text>
+
+  <g stroke="#eceff3" stroke-width="1">
+    <line x1="294" y1="96" x2="294" y2="274"/>
+    <line x1="402" y1="96" x2="402" y2="274"/>
+    <line x1="510" y1="96" x2="510" y2="274"/>
+    <line x1="618" y1="96" x2="618" y2="274"/>
+    <line x1="726" y1="96" x2="726" y2="274"/>
   </g>
-  <g stroke="#e5e7eb" stroke-width="1">
-    <line x1="377.5" y1="96" x2="377.5" y2="304"/>
-    <line x1="525" y1="96" x2="525" y2="304"/>
-    <line x1="672.5" y1="96" x2="672.5" y2="304"/>
-    <line x1="820" y1="96" x2="820" y2="304"/>
+
+  <line x1="294" y1="274" x2="726" y2="274" stroke="#9ca3af" stroke-width="1"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12" fill="#6b7280">
+    <text x="294" y="297" text-anchor="middle">0</text>
+    <text x="402" y="297" text-anchor="middle">6</text>
+    <text x="510" y="297" text-anchor="middle">12</text>
+    <text x="618" y="297" text-anchor="middle">18</text>
+    <text x="726" y="297" text-anchor="middle">24 Melem/s</text>
   </g>
+
   <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14">
-    <text x="40" y="119" fill="#202124">map_filter_scan/morel</text>
-    <rect x="230" y="102" width="555.7" height="22" fill="#2f6f6d"/>
-    <text x="820" y="119" text-anchor="end" fill="#202124">22.606 Melem/s</text>
+    <text x="40" y="110" fill="#202124">map_filter_scan</text>
+    <line x1="294" y1="106" x2="700.9" y2="106" stroke="#d6dbe1" stroke-width="2"/>
+    <circle cx="700.9" cy="106" r="5.5" fill="#b83f39"/>
+    <text x="720" y="110" fill="#202124">22.606 Melem/s</text>
 
-    <text x="40" y="157" fill="#202124">word_count/morel</text>
-    <rect x="230" y="140" width="47.0" height="22" fill="#c55a3d"/>
-    <text x="289" y="157" fill="#202124">1.912 Melem/s</text>
+    <text x="40" y="146" fill="#202124">latest_join</text>
+    <line x1="294" y1="142" x2="671.5" y2="142" stroke="#d6dbe1" stroke-width="2"/>
+    <circle cx="671.5" cy="142" r="4.5" fill="#4b5563"/>
+    <text x="692" y="146" fill="#202124">20.971 Melem/s</text>
 
-    <text x="40" y="195" fill="#202124">windowed_count/morel</text>
-    <rect x="230" y="178" width="330.7" height="22" fill="#6f5cc2"/>
-    <text x="573" y="195" fill="#202124">13.454 Melem/s</text>
+    <text x="40" y="182" fill="#202124">windowed_count</text>
+    <line x1="294" y1="178" x2="536.2" y2="178" stroke="#d6dbe1" stroke-width="2"/>
+    <circle cx="536.2" cy="178" r="4.5" fill="#4b5563"/>
+    <text x="556" y="182" fill="#202124">13.454 Melem/s</text>
 
-    <text x="40" y="233" fill="#202124">latest_join/morel</text>
-    <rect x="230" y="216" width="515.4" height="22" fill="#3d73c5"/>
-    <text x="757" y="233" fill="#202124">20.971 Melem/s</text>
+    <text x="40" y="218" fill="#202124">fanout_gather</text>
+    <line x1="294" y1="214" x2="497.1" y2="214" stroke="#d6dbe1" stroke-width="2"/>
+    <circle cx="497.1" cy="214" r="4.5" fill="#4b5563"/>
+    <text x="517" y="218" fill="#202124">11.284 Melem/s</text>
 
-    <text x="40" y="271" fill="#202124">fanout_gather/morel</text>
-    <rect x="230" y="254" width="277.4" height="22" fill="#8b6f3d"/>
-    <text x="520" y="271" fill="#202124">11.284 Melem/s</text>
+    <text x="40" y="254" fill="#202124">word_count</text>
+    <line x1="294" y1="250" x2="328.4" y2="250" stroke="#d6dbe1" stroke-width="2"/>
+    <circle cx="328.4" cy="250" r="4.5" fill="#4b5563"/>
+    <text x="348" y="254" fill="#202124">1.912 Melem/s</text>
   </g>
 </svg>

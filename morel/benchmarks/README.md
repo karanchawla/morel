@@ -12,10 +12,8 @@ Every published number in this report comes from Criterion. The benchmark suite 
 | `step_overhead/10x10` | 955.55 ns per `Graph::step` | 10 branches, 10 maps per branch |
 | Branch map node-cycle overhead | 9.56 ns per node-cycle | `955.55 ns / 100` branch map nodes |
 | All active operator-cycle overhead | 9.19 ns per operator-cycle | `955.55 ns / 104` active operators |
-| `map_filter_scan/morel` | 22.606 Melem/s | 20,000-event generic workload |
-| `latest_join/morel` | 20.971 Melem/s | 20,000-event generic workload |
-
-![Graph benchmark summary](images/graph-summary.svg)
+| `map_filter_scan` | 22.606 Melem/s | 20,000-event generic workload |
+| `latest_join` | 20.971 Melem/s | 20,000-event generic workload |
 
 ![Workload benchmark summary](images/workload-summary.svg)
 
@@ -72,11 +70,11 @@ Derivation:
 
 | Workload | Events/run | Estimate | 95% Interval | Throughput |
 | --- | ---: | ---: | ---: | ---: |
-| `map_filter_scan/morel` | 20,000 | 884.72 us | 875.66-892.82 us | 22.606 Melem/s |
-| `word_count/morel` | 20,000 | 10.462 ms | 10.451-10.473 ms | 1.912 Melem/s |
-| `windowed_count/morel` | 20,000 | 1.4866 ms | 1.4800-1.4929 ms | 13.454 Melem/s |
-| `latest_join/morel` | 20,000 | 953.69 us | 942.75-964.70 us | 20.971 Melem/s |
-| `fanout_gather/morel` | 20,000 | 1.7725 ms | 1.7567-1.7926 ms | 11.284 Melem/s |
+| `map_filter_scan` | 20,000 | 884.72 us | 875.66-892.82 us | 22.606 Melem/s |
+| `word_count` | 20,000 | 10.462 ms | 10.451-10.473 ms | 1.912 Melem/s |
+| `windowed_count` | 20,000 | 1.4866 ms | 1.4800-1.4929 ms | 13.454 Melem/s |
+| `latest_join` | 20,000 | 953.69 us | 942.75-964.70 us | 20.971 Melem/s |
+| `fanout_gather` | 20,000 | 1.7725 ms | 1.7567-1.7926 ms | 11.284 Melem/s |
 
 ## How To Read The Numbers
 
@@ -119,15 +117,3 @@ rustc --version
 uname -a
 sysctl -n machdep.cpu.brand_string
 ```
-
-## Updating This Report
-
-1. Run the measured commands above on the target machine.
-2. Use Criterion's `target/criterion/**/new/estimates.json` values for every
-   reported benchmark row. Prefer `slope` when present; use `mean` for rows
-   where Criterion does not produce a slope estimate.
-3. Recompute derived node-cycle rates from the same `step_overhead/10x10`
-   estimate used in the graph table.
-4. Regenerate `morel/benchmarks/images/*.svg` from the same values used in the
-   tables.
-5. Re-run the smoke checks and the markdown sanity search before committing.
